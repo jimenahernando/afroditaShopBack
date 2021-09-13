@@ -1,0 +1,180 @@
+//PUBLICAS
+GET http://localhost:3000/api/publicproducts/v2
+
+###
+GET http://localhost:3000/api/publicproducts/2/v2
+
+###
+GET http://localhost:3000/api/publicproducts/cat/ropa interior/v2
+
+//PRIVADAS
+###
+GET http://localhost:3000/api/products
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyNywiZXhwaXJhdGVkX2F0IjoxNjI3MjM0NTkxLCJjcmVhdGVkX2F0IjoxNjI3MjMzOTkxLCJyb2xlIjoiUiIsImlhdCI6MTYyNzIzMzk5MX0.kVSYE_wDJhZvBaP68WwlAKhkYSyqvKJhrapUgtuRrJE
+
+###
+GET http://localhost:3000/api/products?page=4&limit=2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyNywiZXhwaXJhdGVkX2F0IjoxNjI3MjM0NTkxLCJjcmVhdGVkX2F0IjoxNjI3MjMzOTkxLCJyb2xlIjoiUiIsImlhdCI6MTYyNzIzMzk5MX0.kVSYE_wDJhZvBaP68WwlAKhkYSyqvKJhrapUgtuRrJE
+
+###
+# opcion async-await
+GET http://localhost:3000/api/products/v2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiZXhwaXJhdGVkX2F0IjoxNjI3MjExMzM3LCJjcmVhdGVkX2F0IjoxNjI3MjExMDM3LCJyb2xlIjoiUiIsImlhdCI6MTYyNzIxMTAzN30.fq-fzmqPiTDo1DJybcT0GzeDSsMA1U5J2t21oRyexf4
+
+###
+# opcion callback
+GET http://localhost:3000/api/products/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiZXhwaXJhdGVkX2F0IjoxNjI3MjExMzM3LCJjcmVhdGVkX2F0IjoxNjI3MjExMDM3LCJyb2xlIjoiUiIsImlhdCI6MTYyNzIxMTAzN30.fq-fzmqPiTDo1DJybcT0GzeDSsMA1U5J2t21oRyexf4
+
+###
+# opcion callback
+GET http://localhost:3000/api/products/2/v2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiZXhwaXJhdGVkX2F0IjoxNjI3MjExMzM3LCJjcmVhdGVkX2F0IjoxNjI3MjExMDM3LCJyb2xlIjoiUiIsImlhdCI6MTYyNzIxMTAzN30.fq-fzmqPiTDo1DJybcT0GzeDSsMA1U5J2t21oRyexf4
+
+###
+# opcion async-await
+GET http://localhost:3000/api/products/cat/vestimenta
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiZXhwaXJhdGVkX2F0IjoxNjI3MjExMzM3LCJjcmVhdGVkX2F0IjoxNjI3MjExMDM3LCJyb2xlIjoiUiIsImlhdCI6MTYyNzIxMTAzN30.fq-fzmqPiTDo1DJybcT0GzeDSsMA1U5J2t21oRyexf4
+
+###
+# opcion callback solo los nombres de los productos de x categoria
+GET http://localhost:3000/api/products/cat/ropa interior/v2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiZXhwaXJhdGVkX2F0IjoxNjI3MjExMzM3LCJjcmVhdGVkX2F0IjoxNjI3MjExMDM3LCJyb2xlIjoiUiIsImlhdCI6MTYyNzIxMTAzN30.fq-fzmqPiTDo1DJybcT0GzeDSsMA1U5J2t21oRyexf4
+
+###
+POST http://localhost:3000/api/products
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiZXhwaXJhdGVkX2F0IjoxNjI3MjExMzM3LCJjcmVhdGVkX2F0IjoxNjI3MjExMDM3LCJyb2xlIjoiUiIsImlhdCI6MTYyNzIxMTAzN30.fq-fzmqPiTDo1DJybcT0GzeDSsMA1U5J2t21oRyexf4
+
+{
+    "name": "calzones",
+    "description": "gatitos",
+    "price": 12,
+    "category": "vestimenta"
+}
+
+###
+# opcion callback
+POST http://localhost:3000/api/products/v2
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiZXhwaXJhdGVkX2F0IjoxNjI3MjExMzM3LCJjcmVhdGVkX2F0IjoxNjI3MjExMDM3LCJyb2xlIjoiUiIsImlhdCI6MTYyNzIxMTAzN30.fq-fzmqPiTDo1DJybcT0GzeDSsMA1U5J2t21oRyexf4
+
+{
+    "name": "soquetes",
+    "description": "bustav klimt",
+    "price": 8,
+    "category": "vestimenta"
+}
+
+###
+PUT http://localhost:3000/api/products/1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiZXhwaXJhdGVkX2F0IjoxNjI3MjExMzM3LCJjcmVhdGVkX2F0IjoxNjI3MjExMDM3LCJyb2xlIjoiUiIsImlhdCI6MTYyNzIxMTAzN30.fq-fzmqPiTDo1DJybcT0GzeDSsMA1U5J2t21oRyexf4
+
+{
+    "name": "abrochadora",
+    "description": "infantil plastico",
+    "price": 3,
+    "category": "oficina"
+}
+
+###
+PUT http://localhost:3000/api/products/7/v2
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiZXhwaXJhdGVkX2F0IjoxNjI3MjExMzM3LCJjcmVhdGVkX2F0IjoxNjI3MjExMDM3LCJyb2xlIjoiUiIsImlhdCI6MTYyNzIxMTAzN30.fq-fzmqPiTDo1DJybcT0GzeDSsMA1U5J2t21oRyexf4
+
+{
+    "name": "calzones",
+    "description": "dali",
+    "price": 5,
+    "category": "ropa interior"
+}
+
+###
+DELETE http://localhost:3000/api/products/4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiZXhwaXJhdGVkX2F0IjoxNjI3MjExMzM3LCJjcmVhdGVkX2F0IjoxNjI3MjExMDM3LCJyb2xlIjoiUiIsImlhdCI6MTYyNzIxMTAzN30.fq-fzmqPiTDo1DJybcT0GzeDSsMA1U5J2t21oRyexf4
+
+# CLIENTS
+###
+GET http://localhost:3000/api/clients
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiZXhwaXJhdGVkX2F0IjoxNjI3MjE3OTQ5LCJjcmVhdGVkX2F0IjoxNjI3MjE3NjQ5LCJyb2xlIjoiQSIsImlhdCI6MTYyNzIxNzY0OX0.6kOmMvr6LRBFNVaD8C5zVWIQrCuhwSmEzus_SGOLNeA
+
+###
+POST http://localhost:3000/api/clients
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiZXhwaXJhdGVkX2F0IjoxNjI3MjExMzM3LCJjcmVhdGVkX2F0IjoxNjI3MjExMDM3LCJyb2xlIjoiUiIsImlhdCI6MTYyNzIxMTAzN30.fq-fzmqPiTDo1DJybcT0GzeDSsMA1U5J2t21oRyexf4
+
+{
+    "name": "cecilia",
+    "email": "cecilia@live.com",
+    "address": "Blamey lafore 2367",
+    "phone": "153202325"
+}
+
+###
+PUT http://localhost:3000/api/clients/5
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiZXhwaXJhdGVkX2F0IjoxNjI3MjExMzM3LCJjcmVhdGVkX2F0IjoxNjI3MjExMDM3LCJyb2xlIjoiUiIsImlhdCI6MTYyNzIxMTAzN30.fq-fzmqPiTDo1DJybcT0GzeDSsMA1U5J2t21oRyexf4
+
+{
+    "name": "cecilia hernando",
+    "email": "hernandocecilia@live.com",
+    "address": "Blamey lafore 2367",
+    "phone": "153202325"
+}
+
+###
+DELETE http://localhost:3000/api/clients/8
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiZXhwaXJhdGVkX2F0IjoxNjI3MjExMzM3LCJjcmVhdGVkX2F0IjoxNjI3MjExMDM3LCJyb2xlIjoiUiIsImlhdCI6MTYyNzIxMTAzN30.fq-fzmqPiTDo1DJybcT0GzeDSsMA1U5J2t21oRyexf4
+
+###
+GET http://localhost:3000/api/clients/user
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyNywiZXhwaXJhdGVkX2F0IjoxNjI3MjMyMzQ5LCJjcmVhdGVkX2F0IjoxNjI3MjMyMDQ5LCJyb2xlIjoiQSIsImlhdCI6MTYyNzIzMjA0OX0.L97nJ31K_XVnKj_VE885yjZXqCY8ancX99_Tw6xiO-I
+
+# USERS
+
+###
+GET  http://localhost:3000/api/users/
+
+###
+POST  http://localhost:3000/api/users/register
+Content-Type: application/json
+
+{
+    "username": "cecilia",
+    "email": "cecilia@hotmail.com",
+    "password": "onamonona"
+}
+
+###
+POST  http://localhost:3000/api/users/register
+Content-Type: application/json
+
+//valido que tenga username y length > 3
+//valido que el password sea > 3 y < 8
+{
+    "username": "vio",
+    "email": "vio@hotmail.es",
+    "password": "Vio123*+"
+}
+
+###
+POST  http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+    "email": "gracielabarreira@hotmail.com",
+    "password": "fedritobonito"
+}
+
+# igual a la anterior
+###
+POST  http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+    "email": "cecilia@hotmail.com",
+    "password": "onamonona"
+}

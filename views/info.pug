@@ -1,0 +1,20 @@
+extends layouts/layout_main.pug
+
+mixin list(arr)
+    ul
+        each value in arr
+            li= value
+        else
+            li No hay elementos
+
+block main
+    h3 Pagina de Informacion
+    p Aqui va la informacion de contenidos
+    +list([])
+    +list([1,2,3,4])
+    +list(colores.map(color => color.base + '-' + color.tono))
+    p
+        | contenido del parrafo
+
+block footer
+    p copyright@jimenuzqui2021

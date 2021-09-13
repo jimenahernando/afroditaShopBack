@@ -1,0 +1,51 @@
+extends   layouts/layout_main.pug
+
+block main
+	h2 Pagina Principal
+	div
+		a(href="http://www.google.es", class="enlace") Google España
+		a.enlace(href="http://www.google.ar") Google Argentina
+		a#enlacePrincipal.enlace(href="http://www.google.it") Google Italia
+
+	div.dos
+		p= title
+		p El valor del titulo es #{title}
+		p(style={color:'blue', 'background-color': 'red'}) HOLAAAA
+
+	.tres
+		- const clases = ['uno','dos','tres'];
+		p(class=clases) Parrafo con clases
+		p(class=clasesV2) Segundo Parrafo con clases
+
+	.cuatro
+		case products
+			when 0
+				p No tienes productos
+			when 1
+				p tienes 1 producto 
+			default
+				p tienes #{products} productos
+
+	.cinco
+		//comentario que se ve en el HTML
+		//- comentario para el desarrollador
+		ul
+		- for(let i = 0; i < clasesV2.length; i++)
+				li= clasesV2[i]
+
+	.seis
+		ul
+			each val, index in clasesV2
+				//- li= (index+1) + ' - ' + val
+				li #{index+1} - #{val}
+
+	.siete 
+		ul
+			each animal in animals 
+				//- li #{animal} no te muestra nada si no hay
+				li=animal 
+			else
+				li no hay animal
+
+block footer 
+	//- p Copyright@jimenuzqui

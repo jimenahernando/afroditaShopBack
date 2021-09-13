@@ -1,0 +1,24 @@
+extends ../layouts/layout_products.pug
+
+block content
+    h3.title.is-3 Detalle del Producto 
+    table.table.is-bordered
+        tbody
+            tr
+                td Name  
+                td=product.name
+            tr
+                td Description  
+                td=product.description
+            tr
+                td Price  
+                td #{product.price} €
+            tr
+                td Category  
+                td=product.category
+            tr
+                td Available  
+                td=product.available
+            tr
+                td Date Created  
+                td=product.created_at

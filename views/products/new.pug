@@ -1,0 +1,25 @@
+extends ../layouts/layout_products.pug
+
+block content
+    h3.title.is-3 Nuevo Producto
+    form(action='/products/create' method='POST')
+        .field
+            label.label Name
+            .control
+                input.input(type='text' placeholder='Name' name='name')
+        .field
+            label.label Description
+            .control
+                input.input(type='text' placeholder='Description' name='description')
+        .field
+            label.label Price
+            p.control.has-icons-right
+                input.input(type='number' placeholder='Price' name='price')
+                span.icon.is-small.is-right
+                    i.fas.fa-check
+        .field
+            label.label Category
+            .control
+                input.input(type='text' placeholder='Category' name='category' )
+        .control
+            button.button.is-primary.is-fullwidth(type='submit') Enviar

@@ -1,0 +1,77 @@
+extends ../layouts/layout_products.pug
+
+block content
+	if message.length > 0
+		script.
+			Swal.fire('Success','#{message}', 'success');
+	h3.title.is-3 Listado de productos (#{products.length}) 
+	h4.title.is-4 Pagina #{page}
+	//- ol 
+	//-     each product in products 
+	//-         li= product.name
+	.page-buttons.mb-4
+		if page !== 1
+			a.button.mr-1(href="?page=" + (page-1)) Anterior
+		else 
+			a.button.mr-1(disabled) Anterior
+		
+		if products.length < 5
+			a.button.mr-1(disabled) Siguiente
+		else
+			a.button(href="?page=" + (page+1)) Siguiente
+	table.table.is-fullwidth.is-striped
+		thead
+		tr
+			th Nombre
+			th Descripcion
+			th Precio 
+			th Categoria 
+			th Disponible 
+			th Acciones
+		tbody 
+			each product in products 
+				tr
+					td=product.name 
+					td=product.description
+					td #{product.price} €
+					td=product.category
+					td=(product.available === 1 ? 'SI🥳' : 'NO😡') 
+					td
+						a.button.is-small.mr-1(href='/products/'+product.id) 👁‍🗨
+						a.button.is-small.mr-1(href='/products/edit/'+product.id) ✍
+						a.button.is-small.mr-1(href='/products/remove/'+product.id, onclick='return confirm("¿Seguro que quieres borrar el producto?")') 🧻
+						a.borradoRapido.button.is-small(data-productid=product.id) 🧹
+	
+	.products
+		each product in products 
+			.card
+				header.card-header
+					p.card-header-title=product.name
+				.card-content
+					.content
+						p=product.description
+						p=product.category
+						p #{product.price} 💶
+				footer.card-footer
+					a.card-footer-item(href='/products/edit/'+product.id) Edit
+					a.card-footer-item(href='/products/remove/'+product.id, onclick='return confirm("¿Seguro que quieres borrar el producto?")') Delete
+	script. 
+		const botones = document.querySelectorAll('.borradoRapido');
+		botones.forEach(boton => {
+			boton.addEventListener('click', (event) => {
+				//- console.log(boton.dataset.productid);
+				const productId = boton.dataset.productid
+				//llamo al method delete de api
+				fetch(`api/products/${productId}`, { method: 'DELETE' })
+					.then(result => result.json())
+					.then(data => {
+						//- //todos cogen el boton a
+						//- console.log(this);
+						//- console.log(event.target);
+						//- //toma el abuelo
+						//- console.log(boton.parentElement.parentElement);
+						boton.parentElement.parentElement.remove();
+					})
+					.catch(err => console.log(err));
+			});
+		});
